@@ -15,8 +15,11 @@ python + django + django-tinymce(富文本编辑器) +
 - [x] test 
 
 ## 运行环境
+
 [配置环境文件](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)
+
 [虚拟环境安装和启动方式]()
+
 [celery分布式任务队列启动方式]()
 ```
 mysql - database: dailyfresh
