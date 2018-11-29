@@ -16,14 +16,28 @@ python + django + django-tinymce(富文本编辑器) +
 
 ## 运行环境
 [配置环境文件](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)
+[虚拟环境安装和启动方式]()
+[celery分布式任务队列启动方式]()
 ```
 mysql - database: dailyfresh
+
+# 启动celery分布式任务队列
+# redis版本需要2.10.6 否则会报错
+celery -A celery_tasks.tasks worker -l info
+
+# redis服务端启动
+sudo redis-server /etc/redis/redis.conf 指定加载的配置文件
+
 ```
 ## 项目相关包
 ```
 pip install Django==1.8.2 	   # Django版本
 pip install django-tinymce==2.6.0  # 富文本编辑器
 pip install Pillow
+pip install django-redis	   # redis(需要用到redis数据库)
+pip install celery		   # 分布式任务队列
+pip install itsdangerous	   # 
+pip install redis==2.10.6	   # redis
 ```
 
 ## 效果演示
