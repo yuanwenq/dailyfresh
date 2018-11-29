@@ -7,7 +7,7 @@
 __注:此项目纯属个人学习项目__
 
 ## 技术栈
-django + django-tinymce(富文本编辑器) + 
+python + django + django-tinymce(富文本编辑器) +
 
 ## 目标功能:
 - [x] 用户注册 -- 完成
