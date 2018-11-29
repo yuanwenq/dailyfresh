@@ -1,2 +1,2 @@
 # bj18
-test
+HELLO
