@@ -12,7 +12,7 @@ python + django + django-tinymce(富文本编辑器) +
 ## 目标功能:
 - [x] 用户注册 -- 完成
 - [x] 用户登录 -- 完成
-- [x] 
+- [x] test 
 
 ## 运行环境
 
