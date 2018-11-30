@@ -18,6 +18,7 @@
 					<a href="#">立即注册</a>
 				</div>
 				<div class="form_input">
+					{# 不设置表单action 默认提交地址为当前url #}
 					<form method="post">
 						{% csrf_token %}
 						<input type="text" name="username" class="name_input" value="{{ username }}" placeholder="请输入用户名">
