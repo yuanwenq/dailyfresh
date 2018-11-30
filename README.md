@@ -7,12 +7,13 @@
 __注:此项目纯属个人学习项目__
 
 ## 技术栈
-python + django + django-tinymce(富文本编辑器) +
+python + django + django-tinymce(富文本编辑器) + mysql + redis
 
 ## 目标功能:
 - [x] 用户注册 -- 完成
 - [x] 用户登录 -- 完成
-- [x] test 
+- [x] 用户中心 -- 完成
+- [x] 地址信息 -- 完成
 
 ## 运行环境
 
@@ -22,6 +23,9 @@ python + django + django-tinymce(富文本编辑器) +
 
 [celery分布式任务队列启动方式]()
 ```
+# 项目包安装
+pip install requirements.txt
+
 mysql - database: dailyfresh
 
 # 启动celery分布式任务队列
@@ -34,13 +38,7 @@ sudo redis-server /etc/redis/redis.conf 指定加载的配置文件
 ```
 ## 项目相关包
 ```
-pip install Django==1.8.2 	   # Django版本
-pip install django-tinymce==2.6.0  # 富文本编辑器
-pip install Pillow
-pip install django-redis	   # redis(需要用到redis数据库)
-pip install celery		   # 分布式任务队列
-pip install itsdangerous	   # 
-pip install redis==2.10.6	   # redis
+
 ```
 
 ## 效果演示
