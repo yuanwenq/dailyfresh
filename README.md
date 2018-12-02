@@ -24,7 +24,7 @@ python + django + django-tinymce(富文本编辑器) + mysql + redis
 [celery分布式任务队列启动方式]()
 ```
 # 项目包安装
-pip install requirements.txt
+pip install -r requirements.txt
 
 mysql - database: dailyfresh
 
