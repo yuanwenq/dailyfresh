@@ -1,4 +1,4 @@
-# Python-Django-天天生鲜项目(持续编写中...)
+# Python-Django-天天生鲜项目(编写中...)
 
 初学django框架时按照传智播客python教程所学习的项目,该项目包含了实际开发中的电商项目中大部分的功能开发和知识点实践。
 
@@ -7,7 +7,7 @@
 __注:此项目纯属个人学习项目__
 
 ## 技术栈
-python + django + django-tinymce(富文本编辑器) + mysql + redis
+python + django + mysql + redis
 
 ## 目标功能:
 - [x] 用户注册 -- 完成
