@@ -22,6 +22,9 @@ python + django + mysql + redis
 [虚拟环境安装和启动方式]()
 
 [celery分布式任务队列启动方式]()
+
+[FastDFS安装和配置,注意存放目录](https://blog.csdn.net/MissEel/article/details/80856194)
+
 ```
 # 项目包安装
 pip install -r requirements.txt
