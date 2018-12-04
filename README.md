@@ -7,7 +7,7 @@
 __注:此项目纯属个人学习项目__
 
 ## 技术栈
-python + django + mysql + redis
+python + django + mysql + redis + FastDFS + nginx
 
 ## 目标功能:
 - [x] 用户注册 -- 完成
@@ -38,6 +38,12 @@ celery -A celery_tasks.tasks worker -l info
 # redis服务端启动
 sudo redis-server /etc/redis/redis.conf 指定加载的配置文件
 
+# FastDFS服务启动
+# 启动Trackerd服务
+sudo /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start
+
+# 启动storge服务
+sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
 ```
 ## 项目相关包
 ```
