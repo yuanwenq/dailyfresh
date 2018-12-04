@@ -25,6 +25,8 @@ python + django + mysql + redis + FastDFS + nginx
 
 [FastDFS安装和配置,注意存放目录](https://blog.csdn.net/MissEel/article/details/80856194)
 
+[Nginx及fastdfs-nginx-module安装]()
+
 ```
 # 项目包安装
 pip install -r requirements.txt
