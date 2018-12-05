@@ -7,6 +7,7 @@ cryptography==2.4.1
 Django==1.8.2
 django-redis==4.10.0
 django-tinymce==2.6.0
+fdfs-client-py==1.2.6
 idna==2.7
 itsdangerous==1.1.0
 kombu==4.2.1
