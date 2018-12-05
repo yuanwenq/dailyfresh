@@ -54,6 +54,8 @@ sudo /usr/local/nginx/sbin/nginx
 ```
 
 ```
+## 注意点
+pip install fdfs_client-py-master 存在bug，需要下载特定版本地址，
 
 ## 效果演示
 
