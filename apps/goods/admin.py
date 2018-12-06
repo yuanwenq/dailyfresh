@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.core.cache import cache
-from goods.models import GoodsType, IndexPromotionBanner,IndexGoodsBanner, IndexTypeGoodsBanner
+from goods.models import GoodsType, GoodsSKU, Goods, IndexPromotionBanner,IndexGoodsBanner, IndexTypeGoodsBanner
 # Register your models here.
 
 # 基类 注重对象的重写 多态 父类拥有 让子类继承，那样就不用每个子类进行重写
@@ -42,6 +42,8 @@ class IndexPromotionBannerAdmin(BaseModelAdmin):
 
 
 admin.site.register(GoodsType, GoodsTypeAdmin)
+admin.site.register(GoodsSKU)
+admin.site.register(Goods)
 admin.site.register(IndexGoodsBanner, IndexGoodsBannerAdmin)
 admin.site.register(IndexTypeGoodsBanner, IndexTypeGoodsBannerAdmini)
 admin.site.register(IndexPromotionBanner, IndexPromotionBannerAdmin)

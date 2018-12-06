@@ -50,6 +50,8 @@ sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
 
 # 启动nginx
 sudo /usr/local/nginx/sbin/nginx
+# 重启nginx
+sudo /usr/local/nginx/sbin/nginx -s reload
 
 # 每个环境下修改fdfs服务器指向IP
 client.conf

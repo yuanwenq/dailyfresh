@@ -1,4 +1,4 @@
-{# 详情页 列表页 #]
+{# 详情页 列表页 #}
 {% extends 'base.html' %}
 {% block body %}
 <div class="navbar_con">
@@ -7,12 +7,9 @@
             <h1>全部商品分类</h1>
             <span></span>
             <ul class="subnav">
-                <li><a href="#" class="fruit">新鲜水果</a></li>
-                <li><a href="#" class="seafood">海鲜水产</a></li>
-                <li><a href="#" class="meet">猪牛羊肉</a></li>
-                <li><a href="#" class="egg">禽类蛋品</a></li>
-                <li><a href="#" class="vegetables">新鲜蔬菜</a></li>
-                <li><a href="#" class="ice">速冻食品</a></li>
+                {% for type in types %}
+                <li><a href="#" class="{{ type.logo }}">{{ type.name }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <ul class="navlist fl">
