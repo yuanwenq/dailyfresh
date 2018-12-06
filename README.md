@@ -14,6 +14,7 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 - [x] 用户登录 -- 完成
 - [x] 用户中心 -- 完成
 - [x] 地址信息 -- 完成
+- [X] 首页静态访问化 -- 完成
 
 ## 运行环境
 
@@ -49,6 +50,10 @@ sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
 
 # 启动nginx
 sudo /usr/local/nginx/sbin/nginx
+
+# 每个环境下修改fdfs服务器指向IP
+client.conf
+settings.py
 ```
 ## 项目相关包
 ```
