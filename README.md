@@ -15,6 +15,10 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 - [x] 用户中心 -- 完成
 - [x] 地址信息 -- 完成
 - [X] 首页静态访问化 -- 完成
+- [x] 商品列表页 -- 完成
+- [x] 商品详情页 -- 完成
+- [x] 全文检索引擎(搜索引擎) -- 完成
+- [x] 购物车实现增删改查 -- 完成
 
 ## 运行环境
 
@@ -28,14 +32,16 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 
 [Nginx及fastdfs-nginx-module安装]()
 
+[全文检索引擎-生成jieba分词引擎步骤]()
+
 ```
 # 项目包安装
 pip install -r requirements.txt
 
+# 使用的数据库
 mysql - database: dailyfresh
 
 # 启动celery分布式任务队列
-# redis版本需要2.10.6 否则会报错
 celery -A celery_tasks.tasks worker -l info
 
 # redis服务端启动
@@ -53,19 +59,27 @@ sudo /usr/local/nginx/sbin/nginx
 # 重启nginx
 sudo /usr/local/nginx/sbin/nginx -s reload
 
+# 建立索引文件--搜索引擎
+# 新环境需要配置jieba分词,生成whoose_cn_backend文件
+python manage.py rebuild_index
+
 # 每个环境下修改fdfs服务器指向IP
 client.conf
 settings.py
 ```
-## 项目相关包
+## 项目包介绍
 ```
-
+pass 待续
 ```
 ## 注意点
-pip install fdfs_client-py-master 存在bug，需要下载特定版本地址，
+pip install fdfs_client-py-master 存在bug，需要下载特定版本地址  
+redis版本需要2.10.6 否则会报错
 
 ## 效果演示
 
 ## 总结
 
 ## 项目布局
+```
+pass 待续
+```
