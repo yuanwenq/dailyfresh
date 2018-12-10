@@ -19,6 +19,8 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 - [x] 商品详情页 -- 完成
 - [x] 全文检索引擎(搜索引擎) -- 完成
 - [x] 购物车实现增删改查 -- 完成
+- [x] 创建订单页 -- 完成
+- [x] 订单提交功能 -- 完成
 
 ## 运行环境
 
@@ -73,7 +75,7 @@ pass 待续
 ```
 ## 注意点
 pip install fdfs_client-py-master 存在bug，需要下载特定版本地址  
-redis版本需要2.10.6 否则会报错
+redis版本需要2.10.6 否则会报错,因为使用django的版本问题
 
 ## 效果演示
 
