@@ -66,8 +66,12 @@ sudo /usr/local/nginx/sbin/nginx -s reload
 python manage.py rebuild_index
 
 # 每个环境下修改fdfs服务器指向IP
-client.conf
-settings.py
+/utils/fdfs/client.conf
+/dailyfresh/settings.py
+
+# mysql事务隔离级别设置
+sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
+transaction-isolation = READ-COMMITTED (读已提交)
 ```
 ## 项目包介绍
 ```
@@ -75,7 +79,8 @@ pass 待续
 ```
 ## 注意点
 pip install fdfs_client-py-master 存在bug，需要下载特定版本地址  
-redis版本需要2.10.6 否则会报错,因为使用django的版本问题
+redis版本需要2.10.6 否则会报错,因为使用django的版本问题  
+乐观锁,mysql事务的隔离级别设置
 
 ## 效果演示
 
