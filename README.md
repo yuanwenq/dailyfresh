@@ -36,6 +36,7 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 
 [全文检索引擎-生成jieba分词引擎步骤]()
 
+[支付宝支付接口配置]()
 ```
 # 项目包安装
 pip install -r requirements.txt
@@ -72,6 +73,8 @@ python manage.py rebuild_index
 # mysql事务隔离级别设置
 sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
 transaction-isolation = READ-COMMITTED (读已提交)
+
+# 支付宝支付接口配置
 ```
 ## 项目包介绍
 ```
