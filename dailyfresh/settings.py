@@ -25,9 +25,9 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'sey57zv3960^vazw=$#gf!677#@d3(!5fpnl2jhj9)#s&%9ywq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -95,6 +95,7 @@ DATABASES = {
 
 # Django认证系统使用的模型类
 # 替换django默认账户
+# python manage.py createsuper
 AUTH_USER_MODEL='user.User'
 
 # Internationalization
@@ -116,6 +117,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# 指定收集静态文件的路径
+STATIC_ROOT = '/var/www/dailyfresh/static'
 
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {

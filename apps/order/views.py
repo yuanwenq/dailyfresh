@@ -63,7 +63,7 @@ class OrderPlaceView(LoginRequiredMixin, View):
 
         # 获取用户的首见地址
         addrs = Address.objects.filter(user=user)
-        print(sku_ids)
+
         # 组织上下文
         sku_ids = ','.join(sku_ids) # [1, 25]->1, 25
         context = {'skus':skus,

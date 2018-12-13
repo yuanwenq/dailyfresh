@@ -1,4 +1,4 @@
-# Python-Django-天天生鲜项目(编写中...)
+# Python-Django-天天生鲜项目
 
 初学django框架时按照传智播客python教程所学习的项目,该项目包含了实际开发中的电商项目中大部分的功能开发和知识点实践。
 
@@ -10,19 +10,30 @@ __注:此项目纯属个人学习项目__
 python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 
 ## 目标功能:
-- [x] 用户注册 -- 完成
-- [x] 用户登录 -- 完成
-- [x] 用户中心 -- 完成
-- [x] 地址信息 -- 完成
-- [X] 首页静态访问化 -- 完成
-- [x] 商品列表页 -- 完成
-- [x] 商品详情页 -- 完成
-- [x] 全文检索引擎(搜索引擎) -- 完成
-- [x] 购物车实现增删改查 -- 完成
-- [x] 创建订单页 -- 完成
-- [x] 订单提交功能 -- 完成
-- [x] 支付宝支付功能(沙箱) -- 完成
-- [x] 商品评价功能 -- 完成
+- [x] 功能模块
+    - [x] 用户模块
+        - [x] 注册
+        - [x] 登录
+        - [x] 激活(celery)
+        - [x] 退出
+        - [x] 个人中心
+        - [x] 地址管理
+    - [x] 商品模块
+        - [x] 首页(celery)
+        - [x] 商品详情
+        - [x] 商品列表
+        - [x] 搜索功能(haystack+whoose)
+    - [x] 购物车模块(redis)
+        - [x] 增加
+        - [x] 删除
+        - [x] 修改
+        - [x] 查询
+    - [x] 订单模块
+        - [x] 确认订单页面
+        - [x] 订单创建
+        - [x] 请求支付(支付宝)
+        - [x] 查询支付结果
+        - [x] 评论
 
 ## 运行环境
 
@@ -77,10 +88,47 @@ sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
 transaction-isolation = READ-COMMITTED (读已提交)
 
 # 支付宝支付接口配置
+
+# uwsgi的启动和停止
+启动:uwsgi --ini 配置文件路径
+停止:uwsgi --stop uwsgi.pid路径
 ```
 ## 项目包介绍
 ```
-pass 待续
+amqp==2.3.2
+asn1crypto==0.24.0
+billiard==3.5.0.4
+celery==4.2.1
+certifi==2018.11.29
+cffi==1.11.5
+chardet==3.0.4
+configparser==3.5.0
+cryptography==2.4.1
+Django==1.8.2
+django-haystack==2.8.1
+django-redis==4.10.0
+django-redis-sessions==0.5.6
+django-tinymce==2.6.0
+fdfs-client-py==1.2.6
+idna==2.7
+itsdangerous==1.1.0   # 身份信息加密
+jieba==0.39           
+kombu==4.2.1
+mutagen==1.41.1
+Pillow==5.3.0
+pycparser==2.19
+pycryptodomex==3.7.2
+PyMySQL==0.9.2
+python-alipay-sdk==1.8.0
+pytz==2018.7
+redis==2.10.6
+requests==2.20.1
+rerequests==1.0.0b0
+six==1.11.0
+urllib3==1.24.1
+uWSGI==2.0.17.1
+vine==1.1.4
+Whoosh==2.7.4
 ```
 ## 注意点
 pip install fdfs_client-py-master 存在bug，需要下载特定版本地址  
@@ -90,6 +138,8 @@ redis版本需要2.10.6 否则会报错,因为使用django的版本问题
 ## 效果演示
 
 ## 总结
+用户验证使用Django默认的认证系统AbstractUser  
+发送邮件避免让用户等待时间过长,使用了celery任务队列(中间人)  
 
 ## 项目布局
 ```
