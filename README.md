@@ -39,11 +39,11 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 
 [配置环境文件](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)
 
-[虚拟环境安装和启动方式]()
+[虚拟环境安装和启动方式](./configurationFile/虚拟环境安装和启动方式)
 
-[celery分布式任务队列启动方式]()
+[celery分布式任务队列](./configurationFile/celery分布式任务队列)
 
-[FastDFS安装和配置,注意存放目录](https://blog.csdn.net/MissEel/article/details/80856194)
+[FastDFS安装和配置](https://blog.csdn.net/MissEel/article/details/80856194)
 
 [Nginx及fastdfs-nginx-module安装]()
 
@@ -63,11 +63,10 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
     python manage.py runserver 
 ```    
 - uwsgi web服务器启动：  
+    - **注意: uwsgi开启需要修改[dailyfresh/settings](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)中的DEBUG和ALLOWED_HOSTS**
 ```    
     启动: uwsgi --ini 配置文件路径 / uwsgi --ini uwsgi.ini
     停止: uwsgi --stop uwsgi.pid路径 / uwsgi --stop uwsgi.pid
-    
-    注意：uwsgi开启需要修改dailyfresh/settings中的DEBUG和ALLOWED_HOSTS
 ```
 - celery分布式任务队列启动  
 ```
