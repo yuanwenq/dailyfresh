@@ -25,9 +25,14 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'sey57zv3960^vazw=$#gf!677#@d3(!5fpnl2jhj9)#s&%9ywq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+# 开发环境开启
+DEBUG = True
+ALLOWED_HOSTS = []
+
+# 生产环境开启
+# DEBUG = False
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,6 +52,7 @@ INSTALLED_APPS = (
     'order', # 订单模块
 )
 
+# 中间件--生命周期方法
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -165,7 +171,7 @@ DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
 FDFS_CLIENT_CONF='./utils/fdfs/client.conf'
 
 # 设置fdfs存储服务器上的nginx的IP和端口号
-FDFS_URL = 'http://192.168.171.129:8888/'
+FDFS_URL = 'http://192.168.136.128:8888/'
 
 # 全文检索框架的配置
 HAYSTACK_CONNECTIONS = {
