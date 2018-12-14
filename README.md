@@ -50,49 +50,56 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 [全文检索引擎-生成jieba分词引擎步骤]()
 
 [支付宝支付接口配置]()
+
+[软件安装-云盘]()
+  
+- 项目启动：  
+    - **注意: 项目启动前请先查看项目[配置环境文件](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py),配置你相应的设置**
 ```
-# 项目包安装
-pip install -r requirements.txt
-
-# 使用的数据库
-mysql - database: dailyfresh
-
-# 启动celery分布式任务队列
-celery -A celery_tasks.tasks worker -l info
-
-# redis服务端启动
-sudo redis-server /etc/redis/redis.conf
-
-# FastDFS服务启动
-# 启动Trackerd服务
-sudo /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start
-
-# 启动storge服务
-sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
-
-# 启动nginx
-sudo /usr/local/nginx/sbin/nginx
-# 重启nginx
-sudo /usr/local/nginx/sbin/nginx -s reload
-
-# 建立索引文件--搜索引擎
-# 新环境需要配置jieba分词,生成whoose_cn_backend文件
-python manage.py rebuild_index
-
-# 每个环境下修改fdfs服务器指向IP
-/utils/fdfs/client.conf
-/dailyfresh/settings.py
-
-# mysql事务隔离级别设置
-sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
-transaction-isolation = READ-COMMITTED (读已提交)
-
-# 支付宝支付接口配置
-
-# uwsgi的启动和停止
-启动:uwsgi --ini 配置文件路径
-停止:uwsgi --stop uwsgi.pid路径
+    项目包安装
+    pip install -r requirements.txt
+    
+    Django启动命令
+    python manage.py runserver 
+```    
+- uwsgi web服务器启动：  
+```    
+    启动: uwsgi --ini 配置文件路径 / uwsgi --ini uwsgi.ini
+    停止: uwsgi --stop uwsgi.pid路径 / uwsgi --stop uwsgi.pid
+    
+    注意：uwsgi开启需要修改dailyfresh/settings中的DEBUG和ALLOWED_HOSTS
 ```
+- celery分布式任务队列启动  
+```
+    celery -A celery_tasks.tasks worker -l info
+```
+- redis服务端启动
+```
+    sudo redis-server /etc/redis/redis.conf
+```
+- FastDFS服务启动
+```    
+    Trackerd服务
+    sudo /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start
+
+    storge服务
+    sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
+```
+- nginx
+```
+    启动nginx
+    sudo /usr/local/nginx/sbin/nginx
+    重启nginx
+    sudo /usr/local/nginx/sbin/nginx -s reload
+```
+    # 建立索引文件--搜索引擎
+    # 新环境需要配置jieba分词,生成whoose_cn_backend文件
+    python manage.py rebuild_index
+
+    # mysql事务隔离级别设置
+    sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
+    transaction-isolation = READ-COMMITTED (读已提交)
+
 ## 项目包介绍
 ```
 amqp==2.3.2
@@ -131,17 +138,12 @@ vine==1.1.4
 Whoosh==2.7.4
 ```
 ## 注意点
-pip install fdfs_client-py-master 存在bug，需要下载特定版本地址  
-redis版本需要2.10.6 否则会报错,因为使用django的版本问题  
-乐观锁,mysql事务的隔离级别设置
+pip install fdfs_client-py-master 存在bug，需要[下载特定版本]()  
+redis版本需要2.10.6 否则会报错,因为使用django的版本过低问题  
+如果使用乐观锁,需要修改mysql事务的隔离级别设置
 
 ## 效果演示
 
 ## 总结
 用户验证使用Django默认的认证系统AbstractUser  
 发送邮件避免让用户等待时间过长,使用了celery任务队列(中间人)  
-
-## 项目布局
-```
-pass 待续
-```
