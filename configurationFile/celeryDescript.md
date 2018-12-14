@@ -32,7 +32,9 @@ celery通过消息进行通信，通常使用一个叫Broker(中间人)来协cli
         - 生成首页静态文件
     - celery可以分布式操作,放在别的电脑上启动,在当前项目中,我并没有使用另外的虚拟电脑(虚拟机),所以设置的redis地址为:`app = Celery('celery_tasks.tasks', broker='redis://127.0.0.1:6379/8')`为当前虚拟机的redis
     - 由于celery需要先开启中间人来操作任务,所以我将整个项目文件复制一份放到别外的虚拟环境中启动
+        - ![图示](./images/celery_virtualenv.jpg)
     - 任务需要Django环境,所以需要启动Django环境
+        - ![图示](./images/start_celery_conf.jpg)
     
     
     
