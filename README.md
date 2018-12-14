@@ -39,9 +39,9 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
 
 [配置环境文件](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)
 
-[虚拟环境安装和启动方式](./configurationFile/虚拟环境安装和启动方式)
+[虚拟环境安装和启动方式](configurationFile/virtualenvDescript.md)
 
-[celery分布式任务队列](./configurationFile/celery分布式任务队列)
+[celery分布式任务队列](configurationFile/celeryDescript.md)
 
 [FastDFS安装和配置](https://blog.csdn.net/MissEel/article/details/80856194)
 
