@@ -63,7 +63,7 @@ python + django + mysql + redis + FastDFS(分布式图片服务器) + nginx
     python manage.py runserver 
 ```    
 - uwsgi web服务器启动：  
-    - **注意: uwsgi开启需要修改[dailyfresh/settings](https://github.com/yuanwenq/dailyfresh/blob/dev/dailyfresh/settings.py)中的DEBUG和ALLOWED_HOSTS**
+    - **注意: uwsgi开启需要修改[dailyfresh/settings](https://github.com/yuanwenq/dailyfresh/blob/master/dailyfresh/settings.py)中的DEBUG和ALLOWED_HOSTS**
 ```    
     启动: uwsgi --ini 配置文件路径 / uwsgi --ini uwsgi.ini
     停止: uwsgi --stop uwsgi.pid路径 / uwsgi --stop uwsgi.pid
