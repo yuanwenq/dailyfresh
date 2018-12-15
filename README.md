@@ -146,11 +146,11 @@ pip install fdfs_client-py-master 存在bug，需要[下载特定版本](https:/
 redis版本需要2.10.6 否则会报错,因为使用django的版本过低问题  
 如果使用乐观锁,需要修改mysql事务的隔离级别设置
 
-##总结
+## 总结
 
-##项目展示
+## 项目展示
 
-##项目布局
+## 项目布局
 ```
 |-- README.md
 |-- __init__.py

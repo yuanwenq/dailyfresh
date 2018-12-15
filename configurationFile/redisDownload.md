@@ -1,5 +1,5 @@
-#redis
-###redis下载
+# redis
+### redis下载
 1. 当前下载的版本为稳定版3.2版本  
     `sudo wget http://download.redis.io/releases/redis-3.2.8.tar.gz`
 2. 解压  
@@ -27,7 +27,7 @@
    配置⽂件⽬录为/usr/local/redis/redis.conf  
    > sudo cp /usr/local/redis/redis.conf /etc/redis/
 ---
-###下载过程中可能出现的错误
+### 下载过程中可能出现的错误
    - 安装redis时遇到You need tcl 8.5 or newer in order to run the Redis test  
    下载安装tcl：  
     1. sudo wget http://downloads.sourceforge.net/tcl/tcl8.6.8-src.tar.gz   
@@ -37,7 +37,7 @@
     5. sudo make  
     6. sudo make install  
     - 由于tcl下载的服务器在外国,可能下载不了,可以使用我翻墙下载好的包[tcl8.6.1-src.tar.gz](https://pan.baidu.com/s/1NkK7VbeNBrbTPUeTxcYD6A),然后继续执行2-6步 
-###redis配置
+### redis配置
    - redis配置信息在/etc/redis/redis.conf下  
    `sudo vi /etc/redis/redis.conf`
    
@@ -72,8 +72,8 @@
    [redis配置信息参考](http://blog.csdn.net/ljphilp/article/details/52934933)
    
    - 当前项目[redis配置文件](./conf/redis.conf)
-###redis操作命令  
-   - ####服务器端  
+### redis操作命令  
+   - #### 服务器端  
         - 服务器端的命令为  
         `redis-server`
 
@@ -89,7 +89,7 @@
         `sudo kill -9 pid 杀死redis服务器`  
         `sudo redis-server /etc/redis/redis.conf 指定加载的配置文件`  
 
-   - ####客户端
+   - #### 客户端
         - 客户端的命令为redis-cli  
         
         - 可以使⽤help查看帮助⽂档  
