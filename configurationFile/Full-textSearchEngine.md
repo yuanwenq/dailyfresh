@@ -1,4 +1,4 @@
-#全文检索引擎
+# 全文检索引擎
 - [settings文件](../dailyfresh/settings.py)  
 全文检索不同于特定字段的模糊查询，使用全文检索的效率更高，并且能够对于中文进行分词处理
 - haystack：全文检索的框架，支持whoosh、solr、Xapian、Elasticsearc四种全文检索引擎，点击查看[官方网站](http://haystacksearch.org/)
@@ -9,7 +9,7 @@
         如： 很不错的草莓
         分解成：很/不错/的/草莓
         ```
-- ###安装和配置
+- ### 安装和配置
     1. 虚拟环境中安装需要的包
         ```
         pip install django-haystack
@@ -39,7 +39,7 @@
         ```
     4. 在dailyfresh/urls.py中添加搜索的配置[dailyfresh.urls](../dailyfresh/urls.py)  
         `url(r'^search/', include('haystack.urls')),`
-- ###创建引擎及索引
+- ### 创建引擎及索引
     - 在那个应用中使用到索引就在目录下创建[search_indexes.py](../apps/goods/search_indexes.py)文件(固定写法)  
         ```
         dailyfresh/apps/goods目录结构：
@@ -103,7 +103,7 @@
         {{ object.desc }} # 根据商品的简介建立索引
         {{ object.goods.detail }} # 根据商品的详情建立索引
         ```
-- ###使用jieba分词设置
+- ### 使用jieba分词设置
     - 找项目虚拟环境中的haystack目录  
     `cd`  
     `cd .virtualenv/虚拟环境名字/lib/python3.6/site-packages/haystack`  
@@ -148,7 +148,7 @@
         `python manage.py rebuild_index`
     - 索引生成后目录结构如下图:  
         ![whoosh_index目录结构图](./images/whoosh.png)
-- ###全文检索引擎使用,当前项目中使用
+- ### 全文检索引擎使用,当前项目中使用
     按照配置，在admin管理中添加数据后，会自动为数据创建索引，可以直接进行搜索，可以先创建一些测试数据  
     1. 在[dailyfresh/urls.py](../dailyfresh/urls.py)中设置,添加路由  
         `url(r'^search', include('haystack.urls')), # 全文检索框架`
