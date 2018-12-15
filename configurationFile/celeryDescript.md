@@ -23,7 +23,7 @@ celery通过消息进行通信，通常使用一个叫Broker(中间人)来协cli
     2. #### Redis
         Redis也是一款功能完备的broker可选项，但是其更可能因意外中断或者电源故障导致数据丢失的情况。 关于是有那个Redis作为Broker，可访下面网址： http://docs.celeryproject.org/en/latest/getting-started/brokers/redis.html#broker-redis
 ---
-- ### 相对于当前项目(天天生鲜)
+- ### 当前项目(天天生鲜)
     - [Celery代码](../celery_tasks/tasks.py)
     - 当前项目采用redis为Broker
     - 定义celery任务需要使用`@app.task`装饰器
