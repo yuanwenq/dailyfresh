@@ -1,7 +1,7 @@
-#nginx和fastDFS-nginx-module
+# nginx和fastDFS-nginx-module
 - [mod_fastdfs.conf文件](./conf/mod_fastdfs.conf)
 - [nginx.conf文件](./conf/nginx.conf)
-- ###nginx和fastDFS-nginx-module安装
+- ### nginx和fastDFS-nginx-module安装
     1. 解压缩 nginx-1.8.1.tar.gz
     2. 解压缩 fastdfs-nginx-module-master.zip
     3. 进入nginx-1.8.1目录中
@@ -38,7 +38,7 @@
         ```
     10. 启动nginx  
         `sudo /usr/local/nginx/sbin/nginx`
-- ###可能出现的错误
+- ### 可能出现的错误
     - 安装nginx时遇到的包问题
        https://blog.csdn.net/z920954494/article/details/52132125
     - Nginx编译时报错
