@@ -6,7 +6,7 @@ certifi==2018.11.29
 cffi==1.11.5
 chardet==3.0.4
 configparser==3.5.0
-cryptography==3.2
+cryptography==3.3.2
 Django==1.8.2
 django-haystack==2.8.1
 django-redis==4.10.0
